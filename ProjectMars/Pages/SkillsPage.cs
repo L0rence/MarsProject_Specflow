@@ -13,7 +13,7 @@ namespace ProjectMars.Pages
             this.driver = driver;
         }
 
-        // ########### CREATE PAGE FACTORY  ####################//en
+        // ########### CREATE PAGE FACTORY  ####################//
 
         private IWebElement skillsTabLink => driver.FindElement(By.XPath("//a[normalize-space()='Skills']"));
         private IWebElement addNewBtn => driver.FindElement(By.XPath("//div[@class='ui teal button']"));
