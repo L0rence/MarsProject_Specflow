@@ -18,7 +18,7 @@ namespace ProjectMars.Pages
             this.driver = driver;
         }
 
-        // ########### CREATE PAGE FACTORY  ####################//
+        // ########### CREATE PAGE FACTORY  ####################//new 
 
         private IWebElement certificationLinkTab => driver.FindElement(By.XPath("//a[normalize-space()='Certifications']"));
         private IWebElement addNewBtn_certificate => driver.FindElement(By.XPath("//div[@class='ui bottom attached tab segment tooltip-target active']//div[contains(@class,'ui teal button')][normalize-space()='Add New']"));
