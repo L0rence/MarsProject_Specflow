@@ -11,7 +11,7 @@ namespace ProjectMars.Pages
         private IWebDriver driver;
 
 
-        // ###########  CONSTRUCTOR  ####################//new
+        // ###########  CONSTRUCTOR  ####################//
 
         public CertificationPage(IWebDriver driver)
         {
