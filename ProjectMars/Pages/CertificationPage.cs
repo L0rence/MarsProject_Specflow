@@ -50,14 +50,42 @@ namespace ProjectMars.Pages
             Wait.ElementExists(driver, "XPath", "addNewBtn_certificate", 30);
             addNewBtn_certificate.Click();
         }
-        public void enterAward()
+        public void enterAward(string textAward)
         {
-            txtAward.SendKeys("Microsoft certified");
+            if (textAward != null)
+            {
+                Console.WriteLine("enterTxtAward " + textAward);
+                txtAward.SendKeys(textAward);
+            }
+            else
+            {
+                Console.WriteLine("enterTxtAward " + "Microsoft");
+                txtAward.SendKeys("Microsoft");
+            }
+
         }
-        public void enterCertifiedFrom()
+        public void enterCertifiedFrom(string textCertification)
         {
-            txtCertified.SendKeys("Azure Cloud Platform");
+            if (textCertification != null)
+            {
+                Console.WriteLine("enterTxtCertification " + textCertification);
+                txtCertified.SendKeys(textCertification);
+            }
+            else
+            {
+                Console.WriteLine("enterTxtCertification " + "computing");
+                txtCertified.SendKeys("computing");
+            }
+            // txtCertified.SendKeys("Azure Cloud Platform");
         }
+        //public void enterAward()
+        //{
+        //    txtAward.SendKeys("Microsoft certified");
+        //}
+        //public void enterCertifiedFrom()
+        //{
+        //    txtCertified.SendKeys("Azure Cloud Platform");
+        //}
         public void dropdown_Year()
         {
 
@@ -82,15 +110,45 @@ namespace ProjectMars.Pages
             editIconCertificateBtn.Click();
 
         }
-        public void editAward()
+        public void editAward(string textEditAward)
         {
-            editTxtAward.Clear();
-            editTxtAward.SendKeys("AWS Cloud");
+            if (textEditAward != null)
+            {
+                editTxtAward.Clear();
+                Console.WriteLine("enterTxtAward " + textEditAward);
+                editTxtAward.SendKeys(textEditAward);
+            }
+            else
+            {
+                Console.WriteLine("enterTxtAward " + "Microsoft");
+                editTxtAward.SendKeys(textEditAward);
+            }
+
+        }
+        //public void editAward()
+        //{
+        //    editTxtAward.Clear();
+        //    //editTxtAward.SendKeys("AWS Cloud");
+        //}
+        public void editAwardFrom(string textEditCertification)
+        {
+            if (textEditCertification != null)
+            {
+                editCertifiedFrom.Clear();
+                Console.WriteLine("editTxtCertification " + textEditCertification);
+                editCertifiedFrom.SendKeys(textEditCertification);
+            }
+            else
+            {
+                Console.WriteLine("editTxtCertification " + "Microsoft");
+                editCertifiedFrom.SendKeys("Microsoft");
+            }
+
         }
         public void editAwardFrom()
         {
             editCertifiedFrom.Clear();
-            editCertifiedFrom.SendKeys("AWS");
+            //editCertifiedFrom.SendKeys("AWS");
         }
         public void editYear()
         {

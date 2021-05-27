@@ -50,10 +50,34 @@ namespace ProjectMars.Pages
         {
             clickAddNewBtn_Edu.Click();
         }
-        public void enterUniveristyNameTxt()
+        public void enterUniveristyNameTxt(string textCollege)
         {
-            enterUniversityName.SendKeys("Univeristy of Auckland");
+            if (textCollege != null)
+            {
+                Console.WriteLine("enterTxtCollege " + textCollege);
+                enterUniversityName.SendKeys(textCollege);
+            }
+            else
+            {
+                Console.WriteLine("enterTxtCollege " + "Microsoft");
+                enterUniversityName.SendKeys("Microsoft");
+            }
+            //enterUniversityName.SendKeys("Univeristy of Auckland");
         }
+        //public void enterAward(string textAward)
+        //{
+        //    if (textAward != null)
+        //    {
+        //        Console.WriteLine("enterTxtAward " + textAward);
+        //        txtAward.SendKeys(textAward);
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("enterTxtAward " + "Microsoft");
+        //        txtAward.SendKeys("Microsoft");
+        //    }
+
+        //}
         public void dropdownCountry()
         {
             Wait.ElementExists(driver, "CssSelector", "dropdown_countryOfCollege", 10);
@@ -68,10 +92,24 @@ namespace ProjectMars.Pages
             SelectElement selectElement = new SelectElement(dropdown_title);
             selectElement.SelectByValue("M.Tech");
         }
-        public void TxtDegreeName()
+        public void TxtDegreeName(string textDegree)
         {
-            txtDegree.SendKeys("Computer Science");
+            if (textDegree != null)
+            {
+                Console.WriteLine("enterTxtDegree " + textDegree);
+                txtDegree.SendKeys(textDegree);
+            }
+            else
+            {
+                Console.WriteLine("enterTxtDegree " + "Microsoft");
+                txtDegree.SendKeys("Microsoft");
+            }
+            //enterUniversityName.SendKeys("Univeristy of Auckland");
         }
+        //public void TxtDegreeName()
+        //{
+        //    txtDegree.SendKeys("Computer Science");
+        //}
         public void dropdownYear()
         {
 
@@ -109,12 +147,28 @@ namespace ProjectMars.Pages
             clickEditIcon.Click();
             Wait.ElementExists(driver, "CssSelector", "tbody tr td:nth-child(6) span:nth-child(1)", 5);
         }
-        public void editUniversityName()
+        public void editUniversityName(string textEditCollege)
         {
-            Wait.ElementExists(driver, "XPath", "//input[@placeholder='College/University Name']", 10);
-            edit_univeristy_name.Clear();
-            edit_univeristy_name.SendKeys("Univerity Of Canterbury");
+            if (textEditCollege != null)
+            {
+                Wait.ElementExists(driver, "XPath", "//input[@placeholder='College/University Name']", 10);
+                edit_univeristy_name.Clear();
+                Console.WriteLine("enterEditTxtCollege " + textEditCollege);
+                edit_univeristy_name.SendKeys(textEditCollege);
+            }
+            else
+            {
+                Console.WriteLine("enterEditTxtCollege " + "Microsoft");
+                edit_univeristy_name.SendKeys("Microsoft");
+            }
+            //enterUniversityName.SendKeys("Univeristy of Auckland");
         }
+        //public void editUniversityName()
+        //{
+        //    Wait.ElementExists(driver, "XPath", "//input[@placeholder='College/University Name']", 10);
+        //    edit_univeristy_name.Clear();
+        //    edit_univeristy_name.SendKeys("Univerity Of Canterbury");
+        //}
         public void editCountryName()
         {
             Wait.ElementExists(driver, "XPath", "//select[@name='country']", 20);
@@ -128,11 +182,26 @@ namespace ProjectMars.Pages
             SelectElement selectElement = new SelectElement(edit_title);
             selectElement.SelectByValue("B.Tech");
         }
-        public void editDegreeTxt()
+        public void editDegreeTxt(string textEditDegree)
         {
-            edit_degree.Clear();
-            edit_degree.SendKeys("Fashion Technology");
+            if (textEditDegree != null)
+            {
+                edit_degree.Clear();
+                Console.WriteLine("enterEditTxtDegree " + textEditDegree);
+                edit_degree.SendKeys(textEditDegree);
+            }
+            else
+            {
+                Console.WriteLine("enterEditTxtDegree " + "Microsoft");
+                edit_degree.SendKeys("Microsoft");
+            }
+            //enterUniversityName.SendKeys("Univeristy of Auckland");
         }
+        //public void editDegreeTxt()
+        //{
+        //    edit_degree.Clear();
+        //    edit_degree.SendKeys("Fashion Technology");
+        //}
         public void editYear()
         {
 

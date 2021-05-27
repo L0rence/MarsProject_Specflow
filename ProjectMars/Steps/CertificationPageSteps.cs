@@ -54,15 +54,35 @@ namespace ProjectMars.Steps
             certificationPage.clickAddNewBtnCertificate();
             Console.WriteLine("I have click add new button");
         }
-        [When(@"I have enter the details for new certification")]
-        public void WhenIHaveEnterTheDetailsForNewCertification()
-        {
-            certificationPage.enterAward();
-            Console.WriteLine("I have enter the details for new certification");
-            certificationPage.enterCertifiedFrom();
-            certificationPage.dropdown_Year();
+        //[When(@"I have enter the details for new certification")]
+        //public void WhenIHaveEnterTheDetailsForNewCertification()
+        //{
+        //    certificationPage.enterAward();
+        //    Console.WriteLine("I have enter the details for new certification");
+        //    certificationPage.enterCertifiedFrom();
+        //    certificationPage.dropdown_Year();
 
+        //}
+        [When(@"I have enter the details (.*) and (.*) for new certification")]
+        public void WhenIHaveEnterTheDetailsAndForNewCertification(string award, string certification)
+        {
+            certificationPage.enterAward(award);
+            Console.WriteLine("I have enter the details for new certification");
+            certificationPage.enterCertifiedFrom(certification);
+            certificationPage.dropdown_Year();
         }
+        //[When(@"I have enter the details '(.*)' and '(.*)' for new certification")]
+        //public void WhenIHaveEnterTheDetailsForNewCertification(string award, string certification)
+        //{
+        //    //CertificationDetailsStep details = table.CreateInstance<CertificationDetailsStep>();
+        //    // details.enterAward;
+
+        //    certificationPage.enterAward(award);
+        //    Console.WriteLine("I have enter the details for new certification");
+        //    certificationPage.enterCertifiedFrom(certification);
+        //    certificationPage.dropdown_Year();
+
+        //}
         [When(@"I click add button to save new certification")]
         public void WhenIClickAddButtonToSaveNewCertification()
         {
@@ -83,14 +103,15 @@ namespace ProjectMars.Steps
             certificationPage.clickUpdateIcon();
             Console.WriteLine("I click edit icon to edit certification");
         }
-        [When(@"I have enter the details for edited certification details")]
-        public void WhenIHaveEnterTheDetailsForEditedCertificationDetails()
+        [When(@"I have enter the details (.*) and (.*) for edited certification details")]
+        public void WhenIHaveEnterTheDetailsForEditedCertificationDetails(string editAward, string EditCertification)
         {
-            certificationPage.editAward();
-            certificationPage.editAwardFrom();
+            certificationPage.editAward(editAward);
+            certificationPage.editAwardFrom(EditCertification);
             certificationPage.editYear();
             Console.WriteLine("I have enter the details for edited certification details");
         }
+         
 
         [When(@"I have click update button to save edited certification")]
         public void WhenIHaveClickUpdateButtonToSaveEditedCertification()

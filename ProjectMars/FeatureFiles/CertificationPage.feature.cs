@@ -75,10 +75,13 @@ namespace ProjectMars.FeatureFiles
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("1 I am able to create Certificatio details")]
-        public virtual void _1IAmAbleToCreateCertificatioDetails()
+        [NUnit.Framework.TestCaseAttribute("Microsoft", "Technology", null)]
+        public virtual void _1IAmAbleToCreateCertificatioDetails(string award, string certification, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("award", award);
+            argumentsOfScenario.Add("certification", certification);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1 I am able to create Certificatio details", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
@@ -110,7 +113,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I have click add new button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
- testRunner.And("I have enter the details for new certification", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have enter the details {0} and {1} for new certification", award, certification), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
  testRunner.When("I click add button to save new certification", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -124,12 +127,15 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2I am edit certification details")]
-        public virtual void _2IAmEditCertificationDetails()
+        [NUnit.Framework.TestCaseAttribute("Cloud", "Computing", null)]
+        public virtual void _2IAmEditCertificationDetails(string award, string certification, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("award", award);
+            argumentsOfScenario.Add("certification", certification);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2I am edit certification details", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 13
+#line 17
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -149,22 +155,22 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 14
+#line 18
  testRunner.Given("I have logged into", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 15
+#line 19
     testRunner.And("I have click on the certification tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 16
+#line 20
     testRunner.And("I click edit icon to edit certification", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 17
-    testRunner.When("I have enter the details for edited certification details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 21
+    testRunner.When(string.Format("I have enter the details {0} and {1} for edited certification details", award, certification), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 18
+#line 22
     testRunner.And("I have click update button to save edited certification", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 19
+#line 23
     testRunner.Then("I have validate the edited certification is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -178,7 +184,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3  I am able to delete certification", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 21
+#line 28
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -198,16 +204,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 22
+#line 29
  testRunner.Given("I have logged into", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 23
+#line 30
     testRunner.And("I have click on the certification tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 24
+#line 31
     testRunner.And("I have click delete icon to delete certification", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 25
+#line 32
     testRunner.Then("I have validate the delete certification", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

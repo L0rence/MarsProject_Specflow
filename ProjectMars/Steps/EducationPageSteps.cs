@@ -49,16 +49,24 @@ namespace ProjectMars.Steps
             educationPage.clickAddNewBtnEdu();
             Console.WriteLine("I click add new button for the education");
         }
-        [Given("I enter the details for new education")]
-        public void GivenIEnterTheDetailsForNewEducation()
+        [Given("I enter the details (.*) and (.*) for new education")]
+        public void GivenIEnterTheDetailsForNewEducation(string college, string degree)
         {
-            educationPage.enterUniveristyNameTxt();
+            educationPage.enterUniveristyNameTxt(college);
             educationPage.dropdownCountry();
             educationPage.dropDownDegree();
-            educationPage.TxtDegreeName();
+            educationPage.TxtDegreeName(degree);
             educationPage.dropdownYear();
             Console.WriteLine("I enter the details for new education");
         }
+        //[When(@"I have enter the details (.*) and (.*) for new certification")]
+        //public void WhenIHaveEnterTheDetailsAndForNewCertification(string award, string certification)
+        //{
+        //    certificationPage.enterAward(award);
+        //    Console.WriteLine("I have enter the details for new certification");
+        //    certificationPage.enterCertifiedFrom(certification);
+        //    certificationPage.dropdown_Year();
+        //}
         [When("I click add button to save new education")]
         public void WhenIClickAddButtonToSaveNewEducation()
         {
@@ -79,13 +87,13 @@ namespace ProjectMars.Steps
             educationPage.clickOnEditIcon();
             Console.WriteLine("I click edit icon to edit education");
         }
-        [When("I enter the details for edited education details")]
-        public void WhenIEnterTheDetailsForEditedEducationDetails()
+        [When("I enter the details (.*) and (.*) for edited education details")]
+        public void WhenIEnterTheDetailsForEditedEducationDetails(string editCollege, string editDegree)
         {
-            educationPage.editUniversityName();
+            educationPage.editUniversityName(editCollege);
             educationPage.editCountryName();
             educationPage.editTitle();
-            educationPage.editDegreeTxt();
+            educationPage.editDegreeTxt(editDegree);
             educationPage.editYear();
             Console.WriteLine("When I enter the details for edited education details");
         }

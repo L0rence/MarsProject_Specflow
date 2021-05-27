@@ -41,10 +41,26 @@ namespace ProjectMars.Pages
         {
             addNewBtn.Click();
         }
-        public void enterNewSkills()
+
+        public void enterNewSkills(string textSkills)
         {
-            enterSkills.SendKeys("Badminton");
+            if (textSkills != null)
+            {
+                Wait.ElementExists(driver, "XPath", "editLang", 10);
+                Console.WriteLine("enterSkills " + textSkills);
+                enterSkills.SendKeys(textSkills);
+            }
+            else
+            {
+                Console.WriteLine("enterSkills " + "Microsoft");
+                enterSkills.SendKeys("Microsoft");
+            }
+
         }
+        //public void enterNewSkills()
+        //{
+        //    enterSkills.SendKeys("Badminton");
+        //}
         public void selectDropdownSkills_create()
         {
             //enterSkills.SendKeys("Badminton");
@@ -81,13 +97,29 @@ namespace ProjectMars.Pages
             clickEditIcon.Click();
             
         }
-        public void enterEditSkill()
+        public void enterEditSkill(string textEditSkills)
         {
+            if (textEditSkills != null)
+            {
+                enterEditSkills.Clear();
+                Wait.ElementExists(driver, "XPath", "enterEditSkills", 10);
+                Console.WriteLine("enterEditSkills " + textEditSkills);
+                enterEditSkills.SendKeys(textEditSkills);
+            }
+            else
+            {
+                Console.WriteLine("enterEditSkills " + "Microsoft");
+                enterSkills.SendKeys("Microsoft");
+            }
 
-            Wait.ElementExists(driver, "XPath", "enterEditSkills", 10);
-            enterEditSkills.Clear();
-            enterEditSkills.SendKeys("flag");
         }
+        //public void enterEditSkill()
+        //{
+
+        //    Wait.ElementExists(driver, "XPath", "enterEditSkills", 10);
+        //    enterEditSkills.Clear();
+        //    enterEditSkills.SendKeys("flag");
+        //}
         public void selectDropdownSkill_edit()
         {
 

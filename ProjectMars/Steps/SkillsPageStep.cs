@@ -50,10 +50,10 @@ namespace ProjectMars.Steps
             Console.WriteLine("I click add new button for the skills");
         }
 
-        [Given("I enter the details for new skills")]
-        public void GivenIEnterTheDetailsForNewSkills()
+        [Given("I enter the details (.*) for new skills")]
+        public void GivenIEnterTheDetailsForNewSkills(string enterSkills)
         {
-            skillsPage.enterNewSkills();
+            skillsPage.enterNewSkills(enterSkills);
             skillsPage.selectDropdownSkills_create();
             Console.WriteLine("I enter the details for new skills");
         }
@@ -79,10 +79,10 @@ namespace ProjectMars.Steps
             skillsPage.clickOnANewBtn_skills();
             Console.WriteLine("you click edit button");
         }
-        [Then("enter the edit details")]
-        public void ThenEnterTheEditDetails()
+        [Then("enter the edit (.*) details")]
+        public void ThenEnterTheEditDetails(string editSkills)
         {
-            skillsPage.enterEditSkill();
+            skillsPage.enterEditSkill(editSkills);
             skillsPage.selectDropdownSkill_edit();
             Console.WriteLine("enter the edit details");
         }

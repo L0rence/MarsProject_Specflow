@@ -42,12 +42,27 @@ namespace ProjectMars.Pages
         {
             AddNewBtnLanguage.Click();
         }
-        public void enterlanguage()
+        public void enterlanguage(string textLangugae)
         {
-            Wait.ElementExists(driver, "XPath", "enterLanguage", 10);
-            enterLanguage.SendKeys("Java");
-            
+            if (textLangugae != null)
+            {
+                Wait.ElementExists(driver, "XPath", "enterLanguage", 10);
+                Console.WriteLine("enterLanguage " + textLangugae);
+                enterLanguage.SendKeys(textLangugae);
+            }
+            else
+            {
+                Console.WriteLine("enterLanguage " + "Microsoft");
+                enterLanguage.SendKeys("Microsoft");
+            }
+             
         }
+        //public void enterlanguage()
+        //{
+        //    Wait.ElementExists(driver, "XPath", "enterLanguage", 10);
+        //    enterLanguage.SendKeys("Java");
+            
+        //}
         public void dropDown_lang_list()
         {
             languageDropdown.Click();
@@ -84,14 +99,30 @@ namespace ProjectMars.Pages
             clickEditBtnLang.Click();
             Wait.ElementExists(driver, "XPath", "clickEditBtnLang", 10);
         }
-        public void editLanguage()
+        public void editLanguage(string textEditLangugae)
         {
-            editLang.Clear();
-            editLang.SendKeys("English");
-            Wait.ElementExists(driver, "XPath", "editLang", 10);
-            dropDown_edit_Lang.Click();
+            if (textEditLangugae != null)
+            {
+                editLang.Clear();
+                Wait.ElementExists(driver, "XPath", "editLang", 10);
+                Console.WriteLine("enterEditLanguage " + textEditLangugae);
+                enterLanguage.SendKeys(textEditLangugae);
+            }
+            else
+            {
+                Console.WriteLine("enterEditLanguage " + "Microsoft");
+                enterLanguage.SendKeys("Microsoft");
+            }
 
         }
+        //public void editLanguage()
+        //{
+        //    editLang.Clear();
+        //    editLang.SendKeys("English");
+        //    Wait.ElementExists(driver, "XPath", "editLang", 10);
+        //    dropDown_edit_Lang.Click();
+
+        //}
         public void selectDropDown()
         {
             IWebElement element = driver.FindElement(By.XPath("//select[@class='ui dropdown']"));

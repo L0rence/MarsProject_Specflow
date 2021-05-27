@@ -60,10 +60,10 @@ namespace ProjectMars.Steps
         //    languagePage.clickAddNewBtn();
         //    Console.WriteLine("I click the create add new button");
         //}
-        [Then(@"user enter the details for new language")]
-        public void ThenUserEnterTheDetailsForNewLanguage()
+        [Then(@"user enter the details (.*) for new language")]
+        public void ThenUserEnterTheDetailsForNewLanguage(string addLang)
         {
-            languagePage.enterlanguage();
+            languagePage.enterlanguage(addLang);
             languagePage.dropDown_lang_list();
             Console.WriteLine("user enter the details for new language");
         }
@@ -105,10 +105,11 @@ namespace ProjectMars.Steps
 
         // Update
 
-        [When(@"user click edit btn and update file")]
-        public void WhenUserClickEditBtnAndUpdateFile()
+        [When(@"user click edit btn and (.*) update file")]
+        public void WhenUserClickEditBtnAndUpdateFile(string editLanguage)
         {
             languagePage.clickEditLanguage();
+            languagePage.editLanguage(editLanguage);
             Console.WriteLine("I click the edit button");
         }
         //[When("I click the edit button")]
@@ -120,7 +121,7 @@ namespace ProjectMars.Steps
         [When("I edit the details")]
         public void WhenIEditTheDetails()
         {
-            languagePage.editLanguage();
+            //languagePage.editLanguage();
             languagePage.selectDropDown();
             Console.WriteLine("I edit the details");
         }

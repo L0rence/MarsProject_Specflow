@@ -5,19 +5,23 @@
 	Given user have logged in
 	And user click on the language tab
 	And user click add new button for the language
-	Then user enter the details for new language
+	Then user enter the details <addLanguage> for new language
 	When user click add button to save new language
     Then user Validate the language is created
-
+Examples: 
+	| addLanguage |  
+	| cSharp    |  
 
 
 Scenario Outline: 2 update Language on the profile page 
 	Given user have logged in
 	And user click on the language tab
-	When user click edit btn and update file
+	When user click edit btn and <addLanguage> update file 
 	And user save the record
 	Then update record should be verified
-
+Examples: 
+	| addLanguage |  
+	| Java    |  
 
 Scenario: user able to delete the language
 	Given user have logged in
